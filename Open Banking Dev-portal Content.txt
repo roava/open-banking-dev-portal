@@ -1,0 +1,167 @@
+﻿Introduction Page
+Open Banking
+The Rova Open Banking API is based on the Open Banking Standard which allows regulated Third Party Providers (TPPs) to access Account Information Services (AIS), Payment Initiation Services (PIS) and funds confirmation requests for member accounts. Access to these services on behalf of members is controlled by strong customer authentication within Rova apps as part of OpenID Connect authorisation flows.
+We currently support app->app authentication flows.
+Rova is an FCA registered Account Servicing Payment Service Provider (ASPSP) who provides access to these services via the Open Banking standard.
+You can find out more about Open Banking here: What is Open Banking
+API Documentation
+Please see the following specifications we have aligned with:
+* Dynamic Client Registration (DCR) Specification: Use this specification to register your TPP client to use our APIs
+* Open ID Foundation's Financial Grade API (FAPI) Profile: This specification enables user authentication of consents for open banking
+* Open Banking API Specification: Based on Open Banking Read/Write API Specification v3.1.2, this specification describes the resources that are available on our service:
+   * Accounts & Transaction Information API
+   * Payments Initiation Services API
+Getting started
+We recommend that you start off by accessing our Sandbox.
+Our Sandbox fully reflects our production environment and provides an easy route to testing out your proposition.
+See our Getting Started page for instructions on accessing our sandbox APIs
+If you require test accounts please contact help@getrova.com 
+
+
+Getting Started Page
+
+
+Dynamic Client Registration
+Our API allows dynamic client registration in order to create a valid client that is able to use our Authorisation Server. We only trust Software Statement Assertions (SSAs) issued by the Open Banking Directory provided by OBIE. eIDAS certificates are supported via onboarding to the Open Banking Directory (as discussed in more detail below).
+The url of the registration endpoint is advertised on our OIDC Discovery Endpoints (see below) using the registration_endpoint claim. The aud claim used in the outer JWT of a Dynamic Client Registration request is the OBIE issued org_id (as documented in the OBIE DCR v3.1 standard)
+Production security profile
+As defined further in the Ozone Model Bank Open Banking API Specification
+* ID Token Signing Algorithm: PS256
+* Response Types: code id_token
+* Request Object Signing Algorithms: PS256
+* Token Endpoint Auth Singing Algorithms: PS256
+* Token Endpoint Auth Methods: private_key_jwt, tls_client_auth
+For private_key_jwt - the aud claim is the url of the token endpoint as specified in OIDC client authentication The request object used in OIDC flows the aud claim is the issuer url from the Ozone Model Bank ASPSP .wellknown endpoint (linked below).
+Note: Our Sandbox API also offers less strict profiles to assist with integration testing. See below for more details.
+Certificate Support
+OB Transport & OB Signing Certificates
+We recommend that TPPs use OB Transport and OB Signing certificates where possible. TPPs can use their QWACs and QSeals to onboard to the OBIE directory and generate these certificates.
+OB WAC & OB Seal
+We support the use of OBWAC and OBSeal on our production and sandbox environments. TPPs can use their QWACs and QSeals to onboard to the OBIE directory and generate these certificates.
+QWACs
+We support the use of QWACs, but this is not our recommended approach. TPPs facing issues onboarding with QWACs should contact our support desk. Please attach a pem file of the certificate to your support ticket.
+QSeal
+We support the use of QSeals that have been attached to your software statement in the OB Directory.
+
+
+Help Overview Page
+
+
+Glossary
+Account Information
+When used in Open Banking, ​Account information​ refers to an API that gives access to account and transaction information. To gain that access there needs to be two types of authorisation. On one side, the entity accessing the API must be an authorised institution (known as an AISP). On the other side, the person or business that owns that account (called the PCU) must give the AISP permission to access that specific account.
+AISP
+An AISP (Account Information Service Provider) is authorised by a competent authority to access the account and transaction information of individuals and businesses who have given it permission do so. An AISP might use this access to provide a aggregation service, for example, allowing people to see several of their bank accounts in one place.
+AML
+Anti-money laundering processes, regulations and laws.
+ASPSP
+The ASPSPs (Account Servicing Payment Service Providers) are the account providers. These APIs provide access to customer account information (for example, to AISPs) and also allow third-party providers (TPPs) to initiate payments from the account provider’s customers’ accounts.
+The customer must give specific permission to the entity that wants to access their account information and initiate payments on their behalf.
+There are two types of ASPSP:
+Mandatory: in the UK, these are the initial nine banks that are taking part in Open Banking. Voluntary: these are institutions that have chosen to take part in Open Banking.
+CMA
+The Competition and Markets Authority is the UK regulator responsible for the roll-out of Open Banking, which is the UK’s implementation of the European Union’s PSD2 regulation.
+Competent Authority
+In Open Banking, a Competent Authority is a regulator who can authorise entities to be ASPSPs, AISPs, TPPs and so on. The UK Competent Authority is the FCA but it’s important to note that a provider could be authorised by a Competent Authority based in another EU state.
+Directory
+The Open Banking Directory is the canonical list of providers who are authorised to take part in the Open Banking ecosystem. The directory handles authentication between registered providers.
+Directory Sandbox The Open Banking Directory Sandbox provides a test instance of the real directory so that providers can test their implementations before going live. You’ll need to registered with the Open Banking Directory Sandbox in order to use the Ozone Model Bank API sandbox.
+EBA
+The European Banking Authority sets the technical standards for Open Banking.
+EBA RTS
+The technical standards set for Open Banking (and PSD2 in general) by the European Banking Authority are called the Regulatory Technical Standards.
+FCA
+The Financial Conduct Authority is the UK regulatory responsible for authorising participants in Open Banking. It is the UK’s Competent Authority.
+FCA Service Metrics
+FCA Service Metrics is an Open Banking API, offered by {bank name} and other Open Banking institutions, that provides bank account product information to make it easier for people to compare the offerings of different banks.
+KYC
+Regulations designed to prevent money laundering require that financial institutions can prove the identity of their customers. Know Your Customer is the process of verifying the customer’s identity and evaluating potential risk for illegal activity.
+OBIE
+Open Banking Limited is the Open Banking Implementation Entity and it has been tasked with overseeing the delivery of Open Banking in the UK.
+Open Banking
+Open Banking is the consumer-friendly name for the UK’s implementation of the second edition of European Union’s Payment Services Directive. Open Banking oversees the regulatory and technical framework, based on the requirements of the directive, of PSD2 in the UK.
+Open Data
+Under Open Banking, the Mandatory ASPs, such as {bank name}, must provide certain data through APIs that are available for anyone to access. These Open Data APIs include data such ATM and branch locations, as well as production details.
+Payment gateway
+A payment gateway is an intermediary between a merchant services provider –– that facilitates the processing of payment cards –– and ecommerce software.
+PSD2
+The second edition of the European Union’s Payment Services Directive sets the framework for Open Banking and similar implementations across the EU.
+PISP
+A Payment Initiation Services Provider is a service that uses Open Banking APIs to make a payment from a person’s bank account held at another institution, at their request.
+PSP
+A Payment Service Provider is any of the regulated Open Banking providers, including ASPSPs (such as {bank name}), PISPs, AISPs and CBPIIs.
+PSR
+The Payment Service Regulations are the UK’s implementation of the second edition of the European Union’s Payment Service Directive (PSD2).
+PSU
+A Payment Services User is an individual or business using an Open Banking payment service.
+PTC
+The Primary Technical Contact is the person responsible for the management of the technical aspect of an entity’s implementation of Open Banking.
+SCA
+Strong Customer Authentication is the technical standard required by the EBA for PSD2 services.
+TPP
+Third-party providers are the people or institutions that are authorised by a Competent Authority to access customer account information (AISPs) or to initiate payments (PISPs).
+Sandbox
+An Open Banking sandbox provides an environment and data for testing an implementation without having to use real data or be authorised by a Competent Authority.
+XS2A
+Access to account –– a key principle in PSD2 –– is a provision that enables third-party access to the bank accounts of ind
+Help FAQ Page
+
+
+General
+What is Open Banking?
+Open Banking is a reform, called for by the Competitions & Market Authority (CMA), which mandates Ozone Model Bank and the eight other largest current account providers (CMA9) to securely share customer account data and initiate payments with registered third party providers (TPPs) provided the customer has given their consent.
+Please find more information at Open Banking
+What are our Open Banking APIs?
+Open Data
+These Open Data APIs allow API providers (e.g. banks, building societies and ATM providers) to develop API endpoints for products, branches and ATMs data which can then be accessed by anyone.
+Account & Transactions
+These read/write APIs provide the ability for approved/authorised account information service providers (AISPs) to access a customer’s (payment service user, PSU) account and transaction information for domestic business current accounts (BCAs) and personal current accounts (PCAs), only when the PSU grants consent. This API is developed according to the Open Banking Read/Write API Specifications, see https://www.openbanking.org.uk/
+Payment Initiation
+These read/write APIs provide the ability for authorised payment initiation service providers (PISPs) to initiate domestic payments, setup new domestic scheduled payments & domestic standing orders, only when the PSU grants consent. This API is developed according to the Open Banking Read/Write API Specifications, see https://www.openbanking.org.uk/
+Confirmation of Funds
+Ths read/write API allow a Card Based Payment Instrument Issuer ('CBPII') to make a request to confirm funds are available. This API is developed according to the Open Banking Read/Write API Specifications, see https://www.openbanking.org.uk/
+What are the roles a TPP can perform?
+A TPP, Third Party Provider, can perform the following roles once they are registered with their National Competent Authority (NCA):
+Account Information Service Provider (AISP)
+Payment Initiation Service Provider (PISP)
+Technical Service Provider (TSP)
+Card Based Payment Instrument Issuer (CBPII)
+Read/Write APIs
+How can I access {bank name} Read/Write APIs?
+As a TPP, in order to access our Read/Write APIs, you need to be enrolled with Open Banking (Enrolling Onto Open Banking Guide) and registered with the Financial Conduct Authority (FCA) or a National Competent Authority (NCA), as either an AISP and/or PISP, TSP or CBPII.
+This will then enable you to access our APIs through the {bank name} Developer Portal
+As a Third Party Provider, is there somewhere I can test prototype Open Banking Solutions?
+Yes, {bank name} has a test facility ../40-sandbox.md available through our Developer Portal. This will be made available in March 2019.
+Check out our [../20-getting-started.md](Get Started) guide for a step by step guide on how to start testing with our Sandbox APIs.
+Where are the specifications you have used to build your current APIs?
+There are full specifications provided by OBIE available on their [https://openbanking.atlassian.net/wiki/spaces/DZ/overview](Developer Zone) from which we’ve built our APIs.
+Response Codes
+I am getting a 401 unauthorized response when invoking /token endpoints
+(1) Make sure you have registered your SSA in Ozone Model Bank Developer Portal and the subscription of the Accounts Service Provider API and/or Payments Service Provider API is approved by Ozone Model Bank
+(2) Make sure you are following client_secret_post for the OIDC calls
+(3) Make sure you are sending client_id & client_secret as part of x-www-form-urlencoded body parameter
+I am getting an SSL Handshake Error when trying to invoke /token or resource endpoints.
+Check that you are using the correct network certificate signed by Open Banking to establish the TLS MA co
+Help Contact Us Page
+To contact us for help regarding integration, send us an email help@getrova.com 
+
+
+
+
+Note the following (for Ozone API)
+Ozone API to replace the ozone model bank name to Rova in the following pages
+* Sandbox page, 
+* AISP API overview page, 
+* PISP API overview  page 
+Types of accounts that Rova customers will have consent to
+* GBP Current Account
+* GBP Savings Vault Account
+AIS services that will be available to Rova customers
+* Accounts
+* Balances
+* Transactions
+* Beneficiaries
+* Product
+PIS Services that will be available to Rova Customers
+* Domestic Payment
+Only restrict the API documentations to the AIS and PIS services that Rova offers
