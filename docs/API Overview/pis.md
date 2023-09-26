@@ -4,10 +4,10 @@
 The base URL for all PIS APIs is: `https://rs1.api.rova.uk-hub-prod.ozoneapi.co.uk/open-banking/v3.1/pisp/**`
 
 ## Supported Payment Types
-The ROVA API currently only supports:
+The Rova API currently supports:
 - Domestic Payments
 
-The ROVA API __does not__ support:
+The Rova API currently does not support:
 - International payments
 - File & Bulk payments
 - `payment-details` end-points
@@ -19,26 +19,26 @@ The payment request from TPP must have the creditor information.
 The following apply to all domestic payment consents:
 
 ### `InstructedAmount/Amount`
-- There is no MAX `InstructedAmount/Amount` mandated by ROVA API.
--  ROVA suggest PISP notify the PSU that the same limits apply as in their ROVA app. It is possible from time to time that `domestic-payment-consents` is authorised, but the payment initiation fails due to account limits.
+- There is no MAX `InstructedAmount/Amount` mandated by Rova API.
+-  Rova suggest PISP notify the PSU that the same limits apply as in their Rova app. It is possible from time to time that `domestic-payment-consents` is authorised, but the payment initiation fails due to account limits.
 
 ### `InstructedAmount/Currency`
 - `InstructedAmount/Currency` must be `GBP`
 
-### `RemittanceInformation/Reference`
+<!-- ### `RemittanceInformation/Reference`
 `RemittanceInformation/Reference` is a mandatory field and must adhere to the following:
 - Valid characters:
   - A-Z
   - a-z
   - 0-9
   - "space"
-  - The characters "&", "-", ".", "/"
-  
-- Contiguous characters – user enters 6 or more valid characters but without contiguous string of at least 6 alphanumeric characters
+  - The characters "&", "-", ".", "/" -->
+
+<!-- - Contiguous characters – user enters 6 or more valid characters but without contiguous string of at least 6 alphanumeric characters
 - Must contain a contiguous string of at least 6 alphanumeric characters
 - Homogeneous string – user enters 6 or more valid characters (including valid non-alphanumeric characters) - After stripping out non-alphanumeric characters the resulting string cannot consist of all the same character
 
-The PISP may also opt to populate reference field on behalf of the PSU
+The PISP may also opt to populate reference field on behalf of the PSU -->
 
 ### `CreditorAccount`
 <!-- theme: info -->
@@ -52,4 +52,3 @@ The only supported `Account.SchemeName` is `UK.OBIE.SortCodeAccountNumber` for b
 
 ## Payment dates
 Payments can be made on all days including Saturdays, Sundays and Bank Holidays
-

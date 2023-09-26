@@ -9,32 +9,32 @@ The base URL for all AIS APIs is: `https://rs1.api.rova.uk-hub-prod.ozoneapi.co.
 ## Accounts
 [Accounts API](/perry/developer/documentation?resource=ukhub-rova-portal&document=swagger/account-info-openapi.yaml#operations-tag-Accounts)
 
-ROVA members will have one or more of the following accounts:
-- ROVA Personal Account
-- ROVA Personal Savings Pot
-- ROVA Joint Account
-- ROVA Joint Savings Pot
-- ROVA Business Current Account
-- ROVA Business Savings Pot
+Rova members will have one or more of the following accounts:
+- Rova Personal Account
+- Rova Personal Savings Pot
+<!-- - Rova Joint Account
+- Rova Joint Savings Pot
+- Rova Business Current Account
+- Rova Business Savings Pot -->
 
 ## Balances
 [Balances API](/perry/developer/documentation?resource=ukhub-rova-portal&document=swagger/account-info-openapi.yaml#operations-tag-Balances)
 
 Balances shown in this endpoint provide the `InterimAvailable` value.
 
-`InterimAvailable` balance is the value displayed most widely to our members within the ROVA apps.
+`InterimAvailable` balance is the value displayed most widely to our members within the Rova apps.
 -
 -## Transactions
 -[Transactions API](/perry/developer/documentation?resource=ukhub-rova-portal&document=swagger/account-info-openapi.yaml#operations-tag-Transactions)
 -
 -Pagination is supported on GET /accounts/{AccountId}/transactions end point with a page size of 100 transactions.
 -
--> Please note GET /transactions end point is not supported
--
+<!-- -> Please note GET /transactions end point is not supported -->
+<!-- - -->
 -## Beneficiaries
 -[Beneficiaries API](/perry/developer/documentation?resource=ukhub-rova-portal&document=swagger/account-info-openapi.yaml#operations-tag-Beneficiaries)
 -
--> Not currently supported.
+<!-- -> Not currently supported.
 -
 -## Direct Debits
 -[Direct Debits API](/perry/developer/documentation?resource=ukhub-rova-portal&document=swagger/account-info-openapi.yaml#operations-tag-Direct_Debits)
@@ -42,11 +42,11 @@ Balances shown in this endpoint provide the `InterimAvailable` value.
 -> Not currently supported.
 -## Standing Orders
 -[Standing Orders API](/perry/developer/documentation?resource=ukhub-rova-portal&document=swagger/account-info-openapi.yaml#operations-tag-Standing_Orders)
--
--> Not currently supported.
+- -->
+<!-- -> Not currently supported. -->
 -## Products
 -[Products API](/perry/developer/documentation?resource=ukhub-rova-portal&document=swagger/account-info-openapi.yaml#operations-tag-Products)
--
+<!-- -
 -> Not currently supported.
 -
 -## Offers
@@ -64,4 +64,4 @@ Balances shown in this endpoint provide the `InterimAvailable` value.
 -## Statements
 -[Statements API](/perry/developer/documentation?resource=ukhub-rova-portal&document=swagger/account-info-openapi.yaml#operations-tag-Statements)
 -
--> Not currently supported.
+-> Not currently supported. -->

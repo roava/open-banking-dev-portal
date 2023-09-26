@@ -1,6 +1,6 @@
 # Introduction
 
-```
+<!-- ```
 Content placeholders
 The following placeholders can be used for find/replace opperations:
 
@@ -13,18 +13,18 @@ Replace:  https://www.prod-domain.com
 Find:     sandbox.rova.uk-hub-prod.ozoneapi.co.uk
 Replace:  https://www.sandbox-domain.com
 
-Find:     ROVA
+Find:     Rova
 Replace:  Full Bank Name Limited
 
-```
+``` -->
 
 ## Open Banking
 
-The ROVA Open Banking API is based on the Open Banking Standard which allows regulated Third Party Providers (TPPs) to access Account Information Services (AIS), Payment Initiation Services (PIS) and funds confirmation requests for member accounts. Access to these services on behalf of members is controlled by strong customer authentication within ROVA apps as part of OpenID Connect authorisation flows.
+The Rova Open Banking API is based on the Open Banking Standard which allows regulated Third Party Providers (TPPs) to access Account Information Services (AIS), Payment Initiation Services (PIS) and funds confirmation requests for member accounts. Access to these services on behalf of members is controlled by strong customer authentication within Rova apps as part of OpenID Connect authorisation flows.
 
 We currently support app->app and mobile-web->app authentication flows.
 
-ROVA is an FCA registered Account Servicing Payment Service Provider (ASPSP) who provides access to these services via the Open Banking standard.
+Rova is an FCA registered Account Servicing Payment Service Provider (ASPSP) who provides access to these services via the Open Banking standard.
 
 You can find out more about Open Banking here: [What is Open Banking](https://www.openbanking.org.uk/customers/what-is-open-banking/)
 
@@ -37,7 +37,7 @@ Please see the following specifications we have aligned with:
 - Open Banking API Specification: Based on Open Banking Read/Write API Specification v3.1.2, this specification describes the resources that are available on our service:
   - [Accounts & Transaction Information API](../swagger/account-info-openapi.yaml)
   - [Payments Initiation Services API](../swagger/payment-initiation-openapi.yaml)
-  - [Card Based Payment Instrument Issuer (CBPII) API](../swagger/confirmation-funds-openapi.yaml)
+  <!-- - [Card Based Payment Instrument Issuer (CBPII) API](../swagger/confirmation-funds-openapi.yaml) -->
 
 ## Getting started
 
