@@ -1,13 +1,21 @@
 :root {
-  --primary-bg-color: #8791ff;
-  --primary-text-color: #fff;
+  --primary-bg-color: #0b1340;
+  --primary-text-color: #f5f5fd;
 
-  --secondry-bg-color: #8791ff;
-  --secondry-text-color: #fff;
+  --secondry-bg-color: #0b1340;
+  --secondry-text-color: #f5f5fd;
+
+  --url: url("/connector-pub/logo/ukhub-rova-logo.png");
+}
+.auth-bg .bg-overlay {
+  background-color: var(--primary-bg-color) !important;
+}
+.sidebar-overlay {
+  background-color: var(--primary-bg-color) !important;
 }
 
 .content-header {
-  background-color:var(--primary-bg-color);
+  background-color: var(--primary-bg-color);
 }
 
 .content-header h5 {
@@ -18,19 +26,20 @@
   background-color: var(--secondry-bg-color);
 }
 
-.aside-body .nav-label, .mode_title {
+.aside-body .nav-label,
+.mode_title {
   color: var(--secondry-text-color);
 }
 
-.aside-body .nav-link span{
+.aside-body .nav-link span {
   color: var(--secondry-text-color);
 }
 
-.aside-body .nav-link svg{
+.aside-body .nav-link svg {
   color: var(--secondry-text-color);
 }
 
-.aside-body .nav-link:before{
+.aside-body .nav-link:before {
   color: var(--secondry-text-color);
   border-left: 2px solid var(--secondry-text-color) !important;
 }
@@ -40,14 +49,17 @@
 }
 
 .toc-title {
-  background-color:var(--primary-bg-color) !important;
-  color: var(--primary-text-color)  !important;
+  background-color: var(--primary-bg-color) !important;
+  color: var(--primary-text-color) !important;
 }
+
 .toc-link {
   color: var(--secondry-bg-color) !important;
 }
-.toc-link:hover, .toc-link:focus {
-  background-color:var(--primary-bg-color) !important;
+
+.toc-link:hover,
+.toc-link:focus {
+  background-color: var(--primary-bg-color) !important;
   color: var(--primary-text-color) !important;
 }
 
@@ -55,67 +67,105 @@
   background-color: var(--secondry-bg-color) !important;
   color: var(--secondry-text-color) !important;
 }
-.doc-navigation:hover, .doc-navigation:focus {
+
+.doc-navigation:hover,
+.doc-navigation:focus {
   background-color: var(--primary-bg-color) !important;
   color: var(--primary-text-color) !important;
 }
-.doc-navigation:hover a, .doc-navigation:focus a {
+
+.doc-navigation:hover a,
+.doc-navigation:focus a {
   color: var(--primary-text-color) !important;
 }
 
 .brand-color {
-  color:var(--primary-bg-color) !important;
+  color: var(--primary-bg-color) !important;
 }
 
 .brand-button {
-  background-color:var(--primary-bg-color) !important;
-  border-color:var(--primary-bg-color) !important;
+  background-color: var(--primary-bg-color) !important;
+  border-color: var(--primary-bg-color) !important;
 }
 
-.index-logo {
+.index-logo,
+.heimdall_logo {
   height: 100px;
-  width: 300px;
   margin: 20px auto;
-  background: url(/connector-pub/logo/dev-ui-logo.png) center center;
+  margin-top: 30px;
+  background: var(--url) center center;
   background-size: contain;
   background-repeat: no-repeat;
+  display: block;
 }
 
-
-.aside-loggedin-user h6{
+.aside-loggedin-user h6 {
   color: var(--secondry-text-color) !important;
 }
 
-.aside-loggedin-user p{
+.aside-loggedin-user p {
   color: var(--secondry-text-color) !important;
 }
 
-
-.navbar-right h6{
+.navbar-right h6 {
   color: var(--primary-text-color) !important;
 }
 
-.navbar-right p{
+.navbar-right p {
   color: var(--primary-text-color) !important;
 }
-
 
 .theme_changer {
   display: none;
 }
 
-.documentation-links span{
+.card-header.bg-primary.tx-white {
+  background-color: var(--primary-bg-color) !important;
+  border-color: var(--primary-bg-color) !important;
+}
+
+.btn.btn-primary {
+  background-color: var(--primary-bg-color) !important;
+  border-color: var(--primary-bg-color) !important;
+}
+
+.btn.btn-outline-primary {
+  border-color: var(--primary-text-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+.aside-logo img {
+  height: 50px;
+}
+
+.btn-brand-02 {
+  background-color: var(--primary-bg-color) !important;
+  border-color: var(--primary-bg-color) !important;
+}
+
+/* Heimdall Bradning */
+
+.bg-ozone-primary,
+.ozone-button-primary,
+.ozone-ais-account-sub-card-selected {
+  background-color: var(--primary-bg-color) !important;
+}
+.ozone-ais-account-sub-card-selected:hover,
+.ozone-ais-consent-button:hover {
+  background-color: var(--secondry-bg-color);
+}
+.text-ozone-primary {
+  color: var(--primary-bg-color) !important;
+}
+
+.text-ozone-secondray {
   color: var(--secondry-text-color) !important;
 }
 
-.nav-link {
+.bg-ozone-primary {
+  background-color: var(--primary-bg-color) !important;
+}
 
-}
-.nav-link.nav-link--active{
-  background-color:var(--primary-bg-color) !important;
-  color:var(--primary-text-color) !important;
-}
-.documentation-sidebar {
-  visibility: hidden;
-  max-width: 0%;
+.bg-ozone-secondray {
+  background-color: var(--secondry-bg-color) !important;
 }
